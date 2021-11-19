@@ -28,7 +28,6 @@
  /*!ヘッダ—―――――――*/
  header {
    background: rgb(255, 255, 255);
-  　
  }
  
  header .container {
@@ -36,7 +35,7 @@
    display: flex;
    align-items: center;
    max-width: none;
-   border-bottom: solid 1px #D5C9C9
+   border-bottom: solid 1px #D5C9C9;
  }
 
  /*!ロゴ-----------*/

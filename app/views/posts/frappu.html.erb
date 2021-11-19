@@ -1,0 +1,62 @@
+<div class="contents">
+<div class="header">
+<div class="search">
+
+
+
+<form action="/posts" accept-charset="UTF-8" method="get">
+<input type="text" class="search_container" name="search" id="search" size="25" placeholder="キーワード検索">
+<button type="submit" class="button1" name="commit">
+<i class="fas fa-search"></i>
+</button>
+
+
+<a href="/posts/period" class="cp_link">期間限定</a>
+<a href="/posts/coffe" class="cp_link">コーヒー</a>
+<a href="/posts/frappu" class="cp_link-1">フラペチーノ</a>
+<a href="/posts/tea" class="cp_link">ティー</a>
+<a href="/posts/espresso" class="cp_link">エスプレッソ</a>
+<a href="/posts/other" class="cp_link">その他</a>
+
+   
+</div>
+</form>
+
+
+<div class="show">
+
+
+  <% @frappus.each do |t| %>
+  
+  <div class="card-1">
+  <div class="content-img">
+   <%= image_tag t.image_url, size: "250x200" if t.image? %>
+  </div>
+  <p class="content-1"><%= t.name %></p>
+  <p class="content-2">
+  <%= link_to "詳細", post_path(t.id) %>
+
+  <% if user_signed_in? %>
+  <% if current_user.already_liked?(t) %>
+      <%= link_to post_like_path(id: t.id, post_id: t.id), method: :delete do %>
+        <i class="fas fa-heart"></i><%= t.likes.count %>
+      <% end %>
+  <% else %>
+      <%= link_to post_likes_path(id: t.id, post_id: t.id), method: :post do %>
+        <i class="fas fa-heart"></i>
+       <%= t.likes.count %>
+      <% end %>
+  <% end %>
+　　<% else %>
+ 　<i class="fas fa-heart"></i>
+  <%= t.likes.count %>
+　　<% end %>
+
+  </p>
+
+  <% end %>
+
+  
+</div>
+</div>
+</div>

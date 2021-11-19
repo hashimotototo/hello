@@ -1,0 +1,73 @@
+// Place all the styles related to the sutabarisutas controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+* {
+  padding: 0;
+  margin: 0;
+}
+/*トップワード*/
+.area_top_view {
+  position: relative;
+}
+
+.top-word {
+  position: absolute;
+  top: 400px;
+  left: 90px;
+  font-size: 20px;
+  color: white;
+}
+
+.top-button {
+  position: absolute;
+  top: 450px;
+  left: 90px;
+  text-decoration: none;
+  color: #fff;
+  background-color: #355f19;
+  display: inline-block;
+  padding: 0.9em 1.4em;
+  font-size: 1.2em;
+}
+.top-button:hover {
+  color: #fff;
+  background: #355f19;
+}
+
+/*トップ写真*/
+.area_top_view img {
+  width: 1300px;
+  height: 480px;
+}
+.area_top_view {
+  text-align: center;
+}
+
+.bx-wrapper {
+  margin: 0 !important;
+  -moz-box-shadow: none !important;
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+  border: none !important;
+  background: none !important;
+}
+.bxslider img{
+  width: 100% !important;
+  height: auto !important;
+}
+.bx-pager {
+  position: absolute;
+  top: 420px;
+  size: 10px;
+
+}
+
+.bx-wrapper .bx-pager.bx-default-pager a {
+  background: white !important;
+  width: 8px !important;
+  height: 8px !important;
+}
+/*ランキング*/
+
+
+/*アバウト*/

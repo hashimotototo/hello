@@ -1,0 +1,169 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+ *
+ * {
+  padding: 0;
+  margin: 0;
+}
+
+/*ボックス*/
+.box {
+  background:#355f19;
+  height: 30px;
+}
+
+ /*!ヘッダ—―――――――*/
+ header {
+   background: rgb(255, 255, 255);
+  　
+ }
+ 
+ header .container {
+   height: 55px;
+   display: flex;
+   align-items: center;
+   max-width: none;
+   border-bottom: solid 1px #D5C9C9
+ }
+
+ /*!ロゴ-----------*/
+.area_logo_header {
+  display: flex;
+  align-items: center;
+}
+ .area_logo_header .logo {
+   display: block;
+ }
+ .area_logo_header .logo img {
+   height: 25px;
+ }
+ 
+ a img {
+   height: 34px;
+   width: 34px;
+   margin-left: 40px;
+   margin-top: 8px;
+ }
+ 
+ /*ナビゲーション*/
+ .area_nav_header {
+   display: flex;
+   align-items: center;
+   margin-left: auto;
+   flex: auto;
+   min-width: 10px;
+ }
+
+ /*リストナビ*/
+.list_nav_header {
+  display: flex;
+  margin-left: 50px;
+  text-decoration: none; 
+}
+.list_nav_header > li + li {
+  margin-left: 40px;
+}
+
+ /*アイコンリスト*/
+ .list_nav_ico_header {
+   display: flex;
+   align-items: center;
+   padding-left: 25px;
+   margin-left: auto;
+   margin-right: 40px;
+   border-left: 2px soild #ccc; 
+   }
+ .list_nav_ico_header > li + li {
+   margin-left: 10px;
+ }
+ .list_nav_ico_header a {
+   display: block;
+   width: 25px;
+   height: 25px;
+   margin-right: 10px;
+   background-size: contain !important;
+   background-position: center center !important;
+   background-repeat: no-repeat !important;
+   
+ }
+
+.list_nav_ico_header .edit a {
+   background: url(../images/edit.svg);
+}
+.list_nav_ico_header .heart a {
+  background: url(../images/heart.svg);
+}
+.list_nav_ico_header .user a {
+  background: url(../images/user.svg);
+}
+
+ /*nav下線と点とりけし*/
+ header a {
+  text-decoration: none; 
+  color: black;
+ }
+ header a:hover {
+  text-decoration: none; 
+  color: rgba(0, 0, 0, 0.432);
+ }
+
+ header li {
+  list-style: none;
+ }
+
+ /*nav装飾*/
+ .index {
+  position: relative;
+  display: inline-block;
+  padding: 0.4em 1.6em;
+  font-size: 0.8em;
+  color: #355f19;
+  text-decoration: none;
+  user-select: none;
+}
+
+.index::after {
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  width: 40%;
+  height: 1px;
+  margin-top: 4px;
+  content: '';
+  background: #355f19be;
+  transition: 0.4s ease;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+
+/*body*/
+.contents {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/*フッター*/
+footer {
+  background: #355f19;
+  height: 20px;
+  margin-top: auto;
+  text-align: center;
+}
+
+footer p {
+  color: #fff;
+}

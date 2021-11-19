@@ -1,0 +1,45 @@
+<div class="contents">
+<div class="header">
+<%= form_for @post do |f| %>
+<div class="field">
+    <%= f.label :カスタム名 %>
+    <%= f.text_field :name, :size => 50 %> 
+</div>
+<div class="field">
+    <%= f.label :カテゴリー %>
+    <%= f.text_field :category, :size => 50 %> 
+</div>
+<div class="field">
+    <%= f.label :写真 %>
+    <%= f.text_field :image, :size => 50 %>
+</div>
+<div class="field">
+    <%= f.label :カスタム１ %>
+    <%= f.text_field :custom1, :size => 50 %>
+</div>
+<div class="field">
+    <%= f.label :カスタム２ %>
+    <%= f.text_field :custom2, :size => 50 %>
+</div>
+<div class="field">
+    <%= f.label :カスタム３ %>
+    <%= f.text_field :custom2, :size => 50 %>
+</div>
+<div class="field">
+    <%= f.label :カスタム４ %>
+    <%= f.text_field :custom2, :size => 50 %>
+</div>
+<div class="field">
+    <%= f.label :カスタム５ %>
+    <%= f.text_field :custom2, :size => 50 %>
+</div>
+<div class="field">
+    <%= f.label :感想 %>
+    <%= f.text_field :about, :size => 50 %>
+</div>
+    <%= f.submit "編集する" %>
+<% end %>
+
+<%= link_to "一覧に戻る", posts_path %>
+</div>
+</div>

@@ -1,0 +1,2 @@
+module SutabarisutasHelper
+end

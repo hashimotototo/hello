@@ -1,0 +1,86 @@
+<div class="contents">
+
+<%= form_for(@discover, class: 'form-horizontal', role: 'form') do |f| %>
+    <div class="container-sindan">
+        <div class="row">
+            <div class="col-12">
+                <div class="question">Q1</div>
+                <p class="which">飲みたいのは… </p>
+            </div>
+                <div class="option">
+                 <div class="col-6">
+                        <input type="checkbox" value="1" name="discover[question][]" id="discover_question_a1">
+                        <label for="discover_question_a1" class="checkbox02">HOT</label>
+                 </div>
+                 <div class="col-6">
+                        <input type="checkbox" value="2" name="discover[question][]" id="discover_question_a2">
+                        <label for="discover_question_a2" class="checkbox02">ICE</label>
+                 </div>
+                </div>
+
+
+            <div class="col-12">
+                <div class="question">Q2</div>
+                <p class="which"> カロリーは…</p>
+            </div>
+                <div class="option">
+                    <div class="col-6">
+                            <input type="checkbox" value="1" name="discover[question][]" id="discover_question_b1">
+                            <label for="discover_question_b1" class="checkbox02">気にしない</label>
+                     </div>
+                     <div class="col-6">
+                         <input type="checkbox" value="2" name="discover[question][]" id="discover_question_b2">
+                         <label for="discover_question_b2" class="checkbox02">低めがいい</label>
+                     </div>
+                </div>
+
+
+            <div class="col-12">
+                <div class="question">Q3</div>
+                <p class="which"> 間食には…</p>
+            </div>
+               <div class="option">
+                    <div class="col-6">
+                         <input type="checkbox" value="1" name="discover[question][]" id="discover_question_c1">
+                         <label for="discover_question_c1" class="checkbox02">フルーツ</label>
+                    </div>
+                    <div class="col-6">
+                            <input type="checkbox" value="2" name="discover[question][]" id="discover_question_c2">
+                            <label for="discover_question_c2" class="checkbox02">お菓子</label>
+                    </div>
+                    <div class="col-6">
+                            <input type="checkbox" value="3" name="discover[question][]" id="discover_question_c3">
+                             <label for="discover_question_c3" class="checkbox02">紅茶・コーヒー</label>
+                    </div>
+               </div>
+
+
+            <div class="col-12">
+                <div class="question">Q4</div>
+                <p class="which">甘さは…</p>
+            </div>
+            <div class="option">
+                    <div class="col-6">
+                        <input type="checkbox" value="1" name="discover[question][]" id="discover_question_d1">
+                        <label for="discover_question_d1" class="checkbox02">濃厚</label>
+                    </div>
+                    <div class="col-6">
+                         <input type="checkbox" value="2" name="discover[question][]" id="discover_question_d2">
+                         <label for="discover_question_d2" class="checkbox02">普通</label>
+                     </div>
+                    <div class="col-6">
+                         <input type="checkbox" value="3" name="discover[question][]" id="discover_question_d3">
+                        <label for="discover_question_d3" class="checkbox02">控え目</label>
+                    </div>
+             </div>
+        </div>
+    </div>
+
+
+    <div class="sindanbotan">
+        <input type="submit" value="診断する" class="button-4">
+    </div>
+
+<% end %>
+
+</div>

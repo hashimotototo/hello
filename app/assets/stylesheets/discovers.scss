@@ -1,0 +1,467 @@
+// Place all the styles related to the discovers controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+* {
+  padding: 0;
+  margin: 0;
+}
+/*診断する*/
+.discover-picture {
+  margin: 0 auto;
+  padding: 20px 0 0 10px;
+}
+.discover-picture img {
+  width: 250px;
+  height: 350px;
+}
+.discover {
+  margin:10px auto;
+  text-align:center;
+}
+.button-2 {
+  display: inline-block;
+  padding: 0.4em 1.6em;
+  font-size: 0.8rem;
+  color: #173a38;
+  text-decoration: none;
+  user-select: none;
+  border: 1px #173a38 solid;
+  border-radius: 20px;
+  transition: 0.4s ease;
+}
+
+.button-2:hover {
+  color: #fff;
+  background: #173a38;
+}
+
+.text {
+  max-width: 18.5%;
+  margin:0 auto;
+ 
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+/*質問*/
+.col-6 {
+  float: left;
+  font-weight: bold;
+  font-size: 17px;
+}
+
+.option {
+  overflow: hidden;
+  display:flex;
+  justify-content: center;
+  padding-bottom: 30px;
+}
+.row {
+  margin: 10px;
+}
+.col-12 {
+  margin: 20px 0px 10px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 13px;
+
+}
+.question {
+  font-size: 14px;
+  background: rgb(34, 83, 24);
+    color: rgb(255, 255, 255);
+    font-size: 18px;
+    display: inline-block;
+    padding: 10px 30px;
+    letter-spacing: 2px;
+    border-radius: 100px;
+  
+}
+.which {
+    line-height: 1.3em;
+    color: rgb(20, 116, 71);
+    padding: 5px 0px 5px;
+    font-weight: bold;
+    font-size: 20px;
+}
+.col-6 {
+  text-align: center;
+}
+
+/*チェックボックス*/
+input[type=checkbox] {
+  display: none;
+}
+.checkbox02 {
+  box-sizing: border-box;
+  cursor: pointer;
+  display: inline-block;
+  padding: 5px 30px;
+  position: relative;
+  width: auto;
+}
+.checkbox02::before {
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  content: '';
+  display: block;
+  height: 16px;
+  left: 5px;
+  margin-top: -8px;
+  position: absolute;
+  top: 50%;
+  width: 16px;
+}
+.checkbox02::after {
+  border-right: 6px solid #e9af10;
+  border-bottom: 3px solid #e9af10;
+  content: '';
+  display: block;
+  height: 20px;
+  left: 7px;
+  margin-top: -16px;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  transform: rotate(45deg);
+  width: 9px;
+}
+input[type=checkbox]:checked + .checkbox02::before {
+  border-color: #666;
+}
+input[type=checkbox]:checked + .checkbox02::after {
+  opacity: 1;
+}
+
+
+/*診断する*/
+.sindanbotan input[type="submit"] {
+	width: 20%;
+    font-size: 20px;
+    color: #fff;
+	display: inline-block;
+    padding: 15px 0px;
+    text-align: center;
+	background-color: rgb(34, 83, 24);
+    border: 1px solid rgb(34, 83, 24);
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 1s;
+    
+    
+    
+}
+
+/*--hover--*/
+.sindanbotan input[type="submit"]:hover {
+    color: rgb(34, 83, 24);
+    background-color: #ffffff;
+    border: 1px solid rgb(34, 83, 24);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 1s;
+}
+.sindanbotan {
+  margin:60px 0 50px;
+  text-align:center;
+}
+
+
+
+
+
+.box2 {
+   width: 50%;
+   margin: 30px auto;
+ }
+
+ /*あなたにおすすめのカスタムは*/
+ .ttl {
+  display: block;
+  margin-block-start: 1.5em;
+  margin-block-end: 1.5em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+  font-size: 13px;
+  color: #707070;
+}
+.ttl {
+  margin: 10px auto;
+
+}
+
+.ex {
+text-align:center;
+}
+
+
+
+/*結果ボックス*/
+.tweet-container {
+  flex: 1 1 100%;
+  margin: auto;
+  padding: 10px;
+  width: 100%;
+}
+.tweet {
+  flex-direction: column;
+}
+.tweet {
+  justify-content: center;
+}
+
+.tweet {
+  align-items: center;
+}
+
+/*結果*/
+/*写真*/
+
+.sutaba {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.sutaba img {
+  width: 250px;
+  height: 250px;
+
+  
+}
+/*カスタム名*/
+.name {
+  display: block;
+  font-size: 2em;
+  margin-block-start: 0.1em;
+  margin-block-end: 0.1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+  text-align: center;
+}
+.hot {
+  display: block;
+  font-size: 1.5em;
+  margin-block-start: 0.5em;
+  margin-block-end: 0.8em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+  color: red;
+  text-align: center;
+}
+
+.cold {
+  display: block;
+  font-size: 1.5em;
+  margin-block-start: 0.7em;
+  margin-block-end: 0.8em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+  color: rgb(66, 66, 209);
+  text-align: center;
+}
+
+/*ベース*/
+h4 {
+  display: block;
+  font-size: 1.2em;
+  margin-block-start: 0.6em;
+  margin-block-end: 0.6em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+  text-align:center;
+}
+/*カスタム*/
+.container-box {
+ width: 100%;
+ height: 100px;
+}
+h5 {
+  display: block;
+  font-size: 1em;
+  margin-block-start: 0.6em;
+  margin-block-end: 0.6em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+  text-align:center;
+}
+
+ul {
+  list-style-type: disc;
+}
+
+.custom {
+  padding: 0.5em 1em;
+  margin: 2em 0;
+  max-width: 300px;
+  font-weight: bold;
+  color: #504d3e;/*文字色*/
+  background: #FFF;
+  border: solid 3px #355f19;/*線*/
+  border-radius: 10px;/*角の丸み*/
+}
+.custom {
+  text-align:center;
+ margin:0 auto;
+}
+.custom ul {
+  margin: 0; 
+  padding: 0;
+}
+
+/*値段、カロリー*/
+.balloon3-left {
+  position: relative;
+  left: 370px;
+  top: -50px;
+  display: inline-block;
+  margin: 0 0 0 20px;
+  padding: 0 5px;
+  width: 90px;
+  height: 90px;
+  line-height: 90px;
+  text-align: center;
+  color: #FFF;
+  font-size: 20px;
+  font-weight: bold;
+  background: #ffcc75;
+  border-radius: 50%;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+  z-index: 2; 
+}
+.balloon4-left {
+  position: relative;
+  left: 340px;
+  top: -140px;
+  display: inline-block;
+  margin: 0 0 0 20px;
+  padding: 0 5px;
+  width: 90px;
+  height: 90px;
+  line-height: 90px;
+  text-align: center;
+  color: #FFF;
+  font-size: 20px;
+  font-weight: bold;
+  background: #745a2e;
+  border-radius: 50%;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+  z-index: 1; 
+}
+
+
+/*コメント*/
+.says p {
+  margin-bottom: 16px;
+}
+
+.says p {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+.says p {
+  text-align:center;
+  color: #fff;
+  
+}
+
+.balloon5 {
+  position: relative;
+  width: 100%;
+  margin: 1.5em 0;
+  overflow: hidden;
+}
+
+.balloon5 .faceicon {
+  float: left;
+  margin-right: -70px;
+  width: 100px;
+}
+.faceicon {
+  
+  
+}
+.balloon5 .faceicon img{
+  
+  border: solid 3px #ffffff;
+  border-radius: 50%;
+  margin-top: 60px;
+}
+
+ 
+
+.balloon5 .chatting {
+  margin-top: 40px;
+  width: 100%;
+}
+
+.says {
+  display: inline-block;
+  position: relative; 
+  margin: 60px 0 0 105px;
+  padding: 17px 13px;
+  border-radius: 12px;
+  background: #003113d2;
+  padding: 0.5em 1em;
+  max-width: 400px;
+}
+
+.says:after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  top: 18px; 
+  left: -24px;
+  border: 12px solid transparent;
+  border-right: 12px solid #003113d2;
+}
+
+.says p {
+  margin: 10px;
+  padding: 0;
+}
+
+/*ツイート、いいね、もう一度*/
+.nedan {
+  text-align: center;
+}
+
+.share {
+  padding-top: 40px;
+  text-align: center;
+  margin: 0 auto; 
+  
+
+}
+.again {
+  padding-top: 10px;
+  text-align: center;
+  margin: 0 auto; 
+ 
+}
+
+.again2 {
+    display: inline-block;
+    padding: 0.4em 1.6em;
+    font-size: 1em;
+    color: #1f7c5d;
+    text-decoration: none;
+    user-select: none;
+  }
+  
+.again2:hover {
+    opacity: 0.5;
+  }

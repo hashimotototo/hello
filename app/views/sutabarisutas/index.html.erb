@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+   
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+
+<script type="text/javascript">
+        $(document).ready(function(){
+            $('.slider').bxSlider({
+                auto: true,
+                pause: 9000,
+                controls: false,
+            });
+        });
+</script>
+
+  </head>
+<body>
+<div class="contents">
+
+ <div class="area_top_view">
+      
+<ul class="slider">
+<li class="b"><%= image_tag"top1.jpeg" %></li>
+<li class="b"><%= image_tag"top2.jpeg" %></li>
+<li class="b"><%= image_tag"top3.jpeg" %></li>
+<li class="b"><%= image_tag"top4.jpeg" %></li>
+</div>
+       <p class="top-word">あなただけのカスタムを見つけよう</p>
+       <a href="../discovers/new" class="top-button">診断する</a>
+  </div>
+
+ <div class="header">
+ 
+      <div class="head_home">
+        <h2 class="ttl">RUNKNG</h2>
+      </div>
+      
+     
+      <% @all_ranks.each.with_index(1) do |t,i| %>
+        
+       
+        <div class="card-1">
+        第<%= i %>位
+         <div class="content-img">
+            <%= image_tag t.image_url, size: "250x200" if t.image? %>
+         </div>
+         <p class="content-1"><%= t.name %></p>
+         <p class="content-2">
+          <%= link_to "詳細", post_path(t.id) %>
+     
+          <% if user_signed_in? %>
+          <% if current_user.already_liked?(t) %>
+          <%= link_to post_like_path(id: t.id, post_id: t.id), method: :delete do %>
+            <i class="fas fa-heart"></i><%= t.likes.count %>
+          <% end %>
+           <% else %>
+          <%= link_to post_likes_path(id: t.id, post_id: t.id), method: :post do %>
+            <i class="fas fa-heart"></i>
+           <%= t.likes.count %>
+          <% end %>
+           <% end %>
+    　     <% else %>
+     　   <i class="fas fa-heart"></i>
+          <%= t.likes.count %>
+    　　  <% end %>
+          </p>
+         <% end %>
+      
+        </div>
+      
+         
+        
+  
+  
+</div>
+</div>
+</body>
+</html>

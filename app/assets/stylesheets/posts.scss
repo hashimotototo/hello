@@ -1,0 +1,213 @@
+// Place all the styles related to the posts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+/*検索ボタン*/
+.search form {
+    text-align: center;
+    margin: 0 auto;
+}
+
+.search_container {
+    box-sizing: border-box;
+    position: relative;
+    border: 1px solid #999;
+    padding: 3px 10px;
+    border-radius: 20px;
+    height: 2.3em;
+    width: 260px;
+    overflow: hidden;
+  }
+  .search_container input[type="text"] {
+    border: none;
+    height: 2.0em;
+  }
+  .search_container input[type="text"]:focus {
+    outline: 0;
+  } 
+ 
+  .button1{
+    display:block;
+    position:relative;
+    border: none;  /* 枠線を消す */
+    outline: none; /* クリックしたときに表示される枠線を消す */
+    background: transparent; /* 背景の灰色を消す */
+
+  }
+  .button1 i{
+    position:absolute;
+    top:20%;
+    left:400px;
+    margin-top:-1.6em;
+    color:#0070be;
+  }
+
+  .button1 i:hover{
+    position:absolute;
+    top:20%;
+    left:400px;
+    margin-top:-1.6em;
+    color:#006fbeb7;
+  }
+
+  .search {
+    margin-bottom: 30px;
+    border-bottom: solid 1px #D5C9C9
+  }
+  
+/*タグリンク*/
+.cp_link {
+    text-decoration: none;
+	display: inline-block;
+	padding: 0.8em;
+	transition: .3s;
+	transform: scale(1);
+	color: #110e01;
+    font-size: 12px;
+}
+.cp_link:hover {
+	transform: scale(1.05);
+}
+
+.cp_link-1 {
+    text-decoration: none;
+	display: inline-block;
+	padding: 0.8em;
+	transition: .3s;
+	transform: scale(1);
+	color: #110e017a;
+    font-size: 12px;
+   
+ 
+}
+
+  /*いいね*/
+  .fas{
+    color:#d43e3e;
+  }
+
+  .fas:hover{
+    color:#d43e3eb4;
+  }
+  
+  /*投稿リスト*/
+  .card-1 {
+    width: 250px;
+    margin: 0 auto;
+    cursor: pointer;
+    border: 0.5px solid #e9eaea;
+    border-radius: 3px;
+    transition: 0.3s;
+  
+  }
+  
+  .card-1:hover {
+    opacity: 0.6;
+  }
+  
+  .content-img {
+    width: 250px;
+    height: 250px;  
+    padding: 0.2em 0;
+    text-align: center;
+    background: #e3e7e6;
+  }
+  
+  .content-1,
+  .content-2 {
+    position: relative;
+    padding: 0.6em 0.3em;
+    margin: 0;
+    font-size: 0.9em;
+  }
+  
+  .content-2 {
+    font-size: 0.8em;
+  }
+  
+  .content-2::after {
+    position: absolute;
+    top: 0;
+    left: 0.4em;
+    width: 15px;
+    height: 1.5px;
+    content: '';
+    background: #666;
+  }
+
+  /*投稿new*/
+  .post-form {
+    padding: 1.5em 3em;
+    margin: 2em 0;
+    font-weight: bold;
+    color: #000000;/*文字色*/
+    background: #FFF;
+    border: solid 1.5px #01050a3f;/*線*/
+    border-radius: 10px;/*角の丸み*/
+}
+
+.post-form p {
+    margin: 0; 
+    padding: 0;
+
+}
+
+
+  /*カテゴリー選択*/
+  .cp_ipselect {
+	overflow: hidden;
+	width: 90%;
+	margin: 2em auto;
+	text-align: center;
+}
+.cp_ipselect select {
+	width: 100%;
+	padding-right: 1em;
+	cursor: pointer;
+	text-indent: 0.01px;
+	text-overflow: ellipsis;
+	border: none;
+	outline: none;
+	background: transparent;
+	background-image: none;
+	box-shadow: none;
+	-webkit-appearance: none;
+	appearance: none;
+}
+.cp_ipselect select::-ms-expand {
+    display: none;
+}
+.cp_ipselect.cp_sl01 {
+	position: relative;
+	border: 1px solid #bbbbbb;
+	border-radius: 2px;
+	background: #ffffff;
+}
+.cp_ipselect.cp_sl01::before {
+	position: absolute;
+	top: 0.8em;
+	right: 0.9em;
+	width: 0;
+	height: 0;
+	padding: 0;
+	content: '';
+	border-left: 6px solid transparent;
+	border-right: 6px solid transparent;
+	border-top: 6px solid #666666;
+	pointer-events: none;
+}
+.cp_ipselect.cp_sl01 select {
+	padding: 8px 38px 8px 8px;
+	color: #666666;
+}
+
+/*写真選択*/
+input[type="file"] {
+    display: none;
+}
+
+.filelabel {
+    padding: 5px 20px;
+    color: #ffffff;
+    background-color: green;
+    cursor: pointer;
+}

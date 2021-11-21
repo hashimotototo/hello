@@ -1,89 +1,98 @@
-<div class="contents">
+
 <div class="header">
-
 <div class="post-form">
-<p>名前 : <%= @user.name %></p>
-<p>プロフィール : <%= @user.profile %></p>
-
-
-  <%= link_to "編集", edit_user_registration_path %>
-  <%= button_to 'ログアウト', destroy_user_session_path, method: :delete %>
-
-  <%= link_to '投稿する', new_post_path %>
+  <p class="user-name"><%= @user.name %></p>
+  <p class="profile"><%= @user.profile %></p>
+  <%= current_user.posts.where('created_at > ?', Date.new).count %>投稿
+<div class="command">
+  <%= link_to edit_user_registration_path do %>
+    <svg fill="none" viewBox="0 0 24 24" height="24" width="24" xmlns="http://www.w3.org/2000/svg">
+    <path xmlns="http://www.w3.org/2000/svg" d="M16.2929 3.29289C16.6834 2.90237 17.3166 2.90237 17.7071 3.29289L20.7071 6.29289C21.0976 6.68342 21.0976 7.31658 20.7071 7.70711L11.7071 16.7071C11.5196 16.8946 11.2652 17 11 17H8C7.44772 17 7 16.5523 7 16V13C7 12.7348 7.10536 12.4804 7.29289 12.2929L16.2929 3.29289ZM9 13.4142V15H10.5858L18.5858 7L17 5.41421L9 13.4142ZM3 7C3 5.89543 3.89543 5 5 5H10C10.5523 5 11 5.44772 11 6C11 6.55228 10.5523 7 10 7H5V19H17V14C17 13.4477 17.4477 13 18 13C18.5523 13 19 13.4477 19 14V19C19 20.1046 18.1046 21 17 21H5C3.89543 21 3 20.1046 3 19V7Z" fill="#0D0D0D"></path>
+    </svg>
+  <% end %>
+  <%= link_to destroy_user_session_path, method: :delete do %>
+    <svg fill="none" viewBox="0 0 24 24" height="24" width="24" xmlns="http://www.w3.org/2000/svg">
+    <path xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" d="M11 20C11 19.4477 10.5523 19 10 19H5V5H10C10.5523 5 11 4.55228 11 4C11 3.44771 10.5523 3 10 3H5C3.89543 3 3 3.89543 3 5V19C3 20.1046 3.89543 21 5 21H10C10.5523 21 11 20.5523 11 20Z" fill="#0D0D0D"></path>
+    <path xmlns="http://www.w3.org/2000/svg" d="M21.7136 12.7005C21.8063 12.6062 21.8764 12.498 21.9241 12.3828C21.9727 12.2657 21.9996 12.1375 22 12.003L22 12L22 11.997C21.9992 11.7421 21.9016 11.4874 21.7071 11.2929L17.7071 7.29289C17.3166 6.90237 16.6834 6.90237 16.2929 7.29289C15.9024 7.68342 15.9024 8.31658 16.2929 8.70711L18.5858 11H9C8.44771 11 8 11.4477 8 12C8 12.5523 8.44771 13 9 13H18.5858L16.2929 15.2929C15.9024 15.6834 15.9024 16.3166 16.2929 16.7071C16.6834 17.0976 17.3166 17.0976 17.7071 16.7071L21.7064 12.7078L21.7136 12.7005Z" fill="#0D0D0D"></path>
+    </svg>
+  <% end %>
+</div>
 
 </div>
-  <% @user.posts.each do |t| %>
-  
-    <div class="card-1">
-    <div class="content-img">
-     <%= image_tag t.image_url, size: "250x200" if t.image? %>
-    </div>
-    <p class="content-1"><%= t.name %></p>
-    <p class="content-2">
-    <%= link_to "詳細", post_path(t.id) %>
-    <%= link_to "編集", edit_post_path(t.id) %>
-    <%= link_to "削除", post_path(t.id), method: :delete %>
-  
-    <% if user_signed_in? %>
-    <% if current_user.already_liked?(t) %>
-        <%= link_to post_like_path(id: t.id, post_id: t.id), method: :delete do %>
-          <i class="fas fa-heart"></i><%= t.likes.count %>
-        <% end %>
-    <% else %>
-        <%= link_to post_likes_path(id: t.id, post_id: t.id), method: :post do %>
-          <i class="fas fa-heart"></i>
-         <%= t.likes.count %>
-        <% end %>
-    <% end %>
-  　　<% else %>
-   　<i class="fas fa-heart"></i>
-    <%= t.likes.count %>
-  　　<% end %>
-  
-    </p>
-  
-    <% end %>
-  
-    
-  </div>
-  </div>
 
+<div class="tab-wrap">
+  <input id="TAB-01" type="radio" name="TAB" class="tab-switch" checked="checked" /><label class="tab-label" for="TAB-01">いいね</label>
+  <div class="tab-content">
+      <% @user.liked_posts.each do |t| %>
+      <%= link_to post_path(t.id) do %>
+     <div class="card-1">
+      <div class="content-img">
+       <%= image_tag t.image_url, size: "250x200" if t.image? %>
+      </div>
+      <% end %>
+      <p class="content-1"><%= t.name %></p>
+      <p class="content-2">
+      <%= t.about %>
 
-<h2>いいね</h2>
-
-<% @user.liked_posts.each do |t| %>
-<div class="card-1">
-<div class="content-img">
- <%= image_tag t.image_url, size: "250x200" if t.image? %>
-</div>
-<p class="content-1"><%= t.name %></p>
-<p class="content-2">
-<%= link_to "詳細", post_path(t.id) %>
-<%= link_to "編集", edit_post_path(t.id) %>
-<%= link_to "削除", post_path(t.id), method: :delete %>
-
-<% if user_signed_in? %>
-<% if current_user.already_liked?(t) %>
-    <%= link_to post_like_path(id: t.id, post_id: t.id), method: :delete do %>
+      <% if user_signed_in? %>
+        <% if current_user.already_liked?(t) %>
+     <%= link_to post_like_path(id: t.id, post_id: t.id), method: :delete do %>
       <i class="fas fa-heart"></i><%= t.likes.count %>
-    <% end %>
-<% else %>
-    <%= link_to post_likes_path(id: t.id, post_id: t.id), method: :post do %>
+      <% end %>
+      <% else %>
+      <%= link_to post_likes_path(id: t.id, post_id: t.id), method: :post do %>
       <i class="fas fa-heart"></i>
      <%= t.likes.count %>
-    <% end %>
-<% end %>
-　　<% else %>
-　<i class="fas fa-heart"></i>
-<%= t.likes.count %>
-　　<% end %>
+      <% end %>
+      <% end %>
+      <% else %>
+      <i class="fas fa-heart"></i>
+      <%= t.likes.count %>
+      <% end %>
+      </p>
+      <% end %>
+   </div>
+ </div>
 
-</p>
-
-<% end %>
-
-
+  <input id="TAB-02" type="radio" name="TAB" class="tab-switch" /><label class="tab-label" for="TAB-02">投稿</label>
+   <div class="tab-content">
+     <% @user.posts.each do |t| %>
+  
+      <div class="card-1">
+         <%= link_to post_path(t.id) do %>
+          <div class="content-img">
+            <%= image_tag t.image_url, size: "250x200" if t.image? %>
+          </div>
+          <% end %>
+          <p class="content-1"><%= t.name %></p>
+          <p class="content-2">
+          <%= t.about %>
+          <%= link_to edit_post_path(t.id) do %>
+            <%= image_tag"edit-alt.png" %>
+          <% end %>
+          <%= link_to post_path(t.id), method: :delete do %>
+            <%= image_tag"delete.png" %>
+          <% end %>
+          <% if user_signed_in? %>
+          <% if current_user.already_liked?(t) %>
+            <%= link_to post_like_path(id: t.id, post_id: t.id), method: :delete do %>
+              <i class="fas fa-heart"></i><%= t.likes.count %>
+            <% end %>
+          <% else %>
+            <%= link_to post_likes_path(id: t.id, post_id: t.id), method: :post do %>
+              <i class="fas fa-heart"></i>
+            <%= t.likes.count %>
+            <% end %>
+            <% end %>
+          <% else %>
+          <i class="fas fa-heart"></i>
+          <%= t.likes.count %>
+          <% end %>
+         </p>
+          <% end %>
+      </div>  
+  </div>  
+ 
+  
 </div>
 </div>
-
-

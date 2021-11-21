@@ -12,7 +12,7 @@
 
 .top-word {
   position: absolute;
-  top: 400px;
+  top: 320px;
   left: 90px;
   font-size: 20px;
   color: white;
@@ -20,7 +20,7 @@
 
 .top-button {
   position: absolute;
-  top: 450px;
+  top: 360px;
   left: 90px;
   text-decoration: none;
   color: #fff;
@@ -67,7 +67,144 @@
   width: 8px !important;
   height: 8px !important;
 }
+
+.slider2 .bx-wrapper {
+
+}
+
+.bx-wrapper .bx-prev,
+.bx-wrapper .bx-next {
+    background: none !important;
+}
+.bx-wrapper .bx-prev::after,
+.bx-wrapper .bx-next::after {
+    position: absolute;
+    top: 10%;
+    transform: translateY(-50%);
+    color: #ddd;
+    font-size: 50px;
+    
+    font-weight: 100;
+    text-indent: 0px;
+}
+.bx-wrapper .bx-prev::after {
+    left: 100px;
+    content: "＜";
+}
+.bx-wrapper .bx-next::after {
+    right: 100px;
+    content: "＞";
+}
+.bx-wrapper .bx-prev:hover::after,
+.bx-wrapper .bx-next:hover::after {
+    color: #bbb;
+}
+.bx-wrapper .bx-controls-direction a {
+    z-index: 9998;
+}
 /*ランキング*/
+.contents-name {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 40px;
+  margin-top: 110px;
+  font-weight: 200;
+}
 
 
 /*アバウト*/
+.text2 {
+  padding-bottom: 60px;
+  line-height: 2;
+  font-weight: 400;
+  text-align: center;
+  margin: 10px 20px 20px 50px;
+}
+.marker19{
+  background:linear-gradient(transparent 40%, #ffe0c1 40%);
+  }
+
+.number {
+  left: 20%;
+  font-size: 30px;
+  line-height: 1;
+  position: relative;
+  color: #333;
+  text-shadow: 0 0 2px white;
+}
+.number:before {
+  content: "";
+  position: absolute;
+  background: #1d8d4f69;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  top: 50%;
+  /* border: dashed 1px white; */
+  left: -15px;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  z-index: -1;
+}
+
+/*素材紹介*/
+.bx-wrapper img {
+  max-width: 100%;
+  display: block;
+}
+
+.intro {
+  display: flex;
+  width: 700px;
+  margin: 0 auto;
+
+}
+.kind img {
+  margin-top: 70px;
+  margin-left: 40px;
+}
+.marker20 {
+  background:linear-gradient(transparent 40%, #ffe0c1 40%);
+  text-align: end;
+  margin-top: 10px;
+  }
+.kind {
+ margin-top: 20px;
+  width: 37.5%;
+margin-right: 3%;
+  margin-left: 5%;
+}
+ul.sample1{
+  counter-reset:list;
+  list-style-type:none;
+  font: 14px/1.6 'arial narrow', sans-serif;
+  padding:0;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+ul.sample1 li{
+  position:relative;
+  color: #333;
+  padding: 10px 0 0 10px;
+
+  line-height: 30px;
+  border-bottom: dashed 1px #ccc;
+}
+ul.sample1 li:before{
+  counter-increment: list;
+  content: counter(list) ".";
+  display: block;
+  position: absolute;
+  left: 0px;
+  font-weight: bold;
+  top: 60%;
+  -moz-transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.explain {
+  font-size: 12px;
+}

@@ -20,12 +20,16 @@
 }
 
 /*ボックス*/
-.box {
-  background:#355f19;
-  height: 30px;
-}
 
- /*!ヘッダ—―――――――*/
+.topic {
+  background-color: #355f19;
+  color: #ffffff;
+  text-align: center;
+  font-size: 12px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+/*!ヘッダ—―――――――*/
  header {
    background: rgb(255, 255, 255);
  }
@@ -47,12 +51,12 @@
    display: block;
  }
  .area_logo_header .logo img {
-   height: 25px;
+   height: 30px;
  }
  
- a img {
-   height: 34px;
-   width: 34px;
+ .area_logo_header img {
+   height: 50px;
+   width: 50px;
    margin-left: 40px;
    margin-top: 8px;
  }
@@ -157,12 +161,27 @@
 
 /*フッター*/
 footer {
-  background: #355f19;
-  height: 20px;
-  margin-top: auto;
-  text-align: center;
+  background: #ffffff;
+  
+  
+}
+.foot {
+  height: 50px;
+  margin-left: 80%;
+  margin-top: 30px;
+}
+footer p {
+  font-family: "A+mfCv-AXIS Font ベーシック R ProN", sans-serif;
+  color: rgb(0, 0, 0);
+  line-height: 2;
+  font-weight: 400;
 }
 
-footer p {
-  color: #fff;
+
+footer a {
+  text-decoration: none;
+  color: black;
+}
+footer a:hover {
+  color: rgba(0, 0, 0, 0.623);
 }

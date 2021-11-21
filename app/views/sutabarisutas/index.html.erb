@@ -15,6 +15,14 @@
             });
         });
 </script>
+<script type="text/javascript">
+        $(document).ready(function(){
+            $('.slider2').bxSlider({
+              pager: false
+            
+            });
+        });
+</script>
 
   </head>
 <body>
@@ -27,17 +35,16 @@
 <li class="b"><%= image_tag"top2.jpeg" %></li>
 <li class="b"><%= image_tag"top3.jpeg" %></li>
 <li class="b"><%= image_tag"top4.jpeg" %></li>
-</div>
+</ul>
        <p class="top-word">あなただけのカスタムを見つけよう</p>
        <a href="../discovers/new" class="top-button">診断する</a>
   </div>
 
- <div class="header">
+
  
-      <div class="head_home">
-        <h2 class="ttl">RUNKNG</h2>
-      </div>
-      
+     
+        <h2 class="contents-name">RUNKNG</h2>
+<div class="header">
      
       <% @all_ranks.each.with_index(1) do |t,i| %>
         
@@ -76,6 +83,118 @@
   
   
 </div>
+
+
 </div>
+
+
+<h2 class="contents-name">ABOUT</h2>   
+<div class="text2">
+<p> 
+スターバックスのカスタムは<br>
+<span class="marker19">素材</span>と<span class="marker19">どうするか（追加・変更・削除・増量・減量）</span>で<br>
+決めることができます。<br>
+<br>
+ここでは、よくカスタマイズされる「素材」を紹介します。<br>
+（ここで紹介されているもの以外にも種類があります）<br>
+</p>
+</div>
+
+
+<ul class="slider2">
+  <li class="b">
+    <div class="intro">
+      <div class="kind">
+      <span class="number">01 ミルク</span>
+        <ul class="sample1">
+          <li>ミルク（通常）</li><span class="explain">美味しいコクとまろやかな味わい！</span>
+          <li>低脂肪乳</li><span class="explain">ミルクと無脂肪乳半分ずつ</span>
+          <li>無脂肪乳</li><span class="explain">低カロリー！さっぱりとした味わい</span>
+          <li>豆乳（ソイミルク）</li><span class="explain">豊富な栄養素とまろやかな味わい</span>
+          <li>アーモンドミルク</li><span class="explain">香ばしさと濃厚な味わい</span>
+          <li>ブラベ</li><span class="explain">ミルクとホイップクリーム原液半分ずつ</span>
+        </ul>
+        <span class="marker20">※追加+50円</span>
+      </div>
+      <div class="kind">
+      <%= image_tag"milk.jpeg" %>
+      </div>
+    </div>
+  </li>
+
+  <li class="b">
+    <div class="intro">
+      <div class="kind">
+      <span class="number">02 シロップ</span>
+        <ul class="sample1">
+          <li>バニラシロップ</li><span class="explain">やさしい甘さとふんわりとした香り</span>
+          <li>キャラメルシロップ</li><span class="explain">濃厚なキャラメル風味</span>
+          <li>モカ（チョコ）シロップ</li><span class="explain">チョコレートのとろけるような甘さ</span>
+          <li>ホワイトモカ</li><span class="explain">ホワイトチョコレートのような口当たり</span>
+          <li>アーモンドフィーシロップ</li><span class="explain">焦がしたキャラメルのような味わい</span>
+          <li>クラシックシロップ</li><span class="explain">シンプルな甘さを追加したいときに</span>
+          <li>チャイシロップ</li><span class="explain">スパイシーで甘い風味</span>
+        </ul>
+        <span class="marker20">※追加+50円</span>
+      </div>
+      <div class="kind">
+      <%= image_tag"siroppu.png" %>
+      </div>
+    </div>
+  </li>
+  <li class="b">
+      <div class="intro">
+      <div class="kind">
+      <span class="number">03 ソース</span>
+        <ul class="sample1">
+          <li>チョコレートソース</li><span class="explain">ホイップ・抹茶との相性抜群</span>
+          <li>キャラメルソース</li><span class="explain">ミルクとホイップの相性抜群</span>
+        </ul>
+        <span class="marker20">※追加無料！</span>
+      </div>
+      <div class="kind">
+      <%= image_tag"so-su.png" %>
+      </div>
+      </div>
+   </li>
+  <li class="b">
+      <div class="intro">
+      <div class="kind">
+      <span class="number">04 コンディメント</span>
+        <ul class="sample1">
+          <li>ハチミツ</li><span class="explain">まろやかな甘さでほっこり！</span>
+          <li>ココアパウダー</li><span class="explain">リッチなチョコレートの味わいに</span>
+          <li>シナモンパウダー</li><span class="explain">甘い香りとマイルドな風味</span>
+          <li>ガムシロップ</li><span class="explain">シンプルな甘さを追加</span>
+        </ul>
+        <span class="marker20">※追加無料！</span>
+      </div>
+      <div class="kind">
+      <%= image_tag"kondiment.png" %>
+      </div>
+      </div>
+  </li>
+  <li class="b">
+    <div class="intro">
+    <div class="kind">
+    <span class="number">05 その他</span>
+      <ul class="sample1">
+        <li>チョコチップ</li><span class="explain">追加でデザート感アップ！</span>
+        <li>ホイップ</li><span class="explain">ドリンクだけでなくフードにも追加可能！</span>
+        <li>シトラス果肉</li><span class="explain">桃の果肉、ゆずの皮などを混ぜたもの</span>
+        <li>エスプレッソ</li><span class="explain">コーヒー感アップ！</span>
+        <li>フォームミルク</li><span class="explain">ふわふわの泡のミルク</span>
+      </ul>
+     
+    </div>
+    <div class="kind">
+    <%= image_tag"sonota.png" %>
+    </div>
+    </div>
+  </li>
+
+</ul>
+
+
 </body>
 </html>

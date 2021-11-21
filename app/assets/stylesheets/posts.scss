@@ -100,9 +100,6 @@
   
   }
   
-  .card-1:hover {
-    opacity: 0.6;
-  }
   
   .content-img {
     width: 250px;
@@ -133,7 +130,14 @@
     content: '';
     background: #666;
   }
-
+.content-2 a {
+  text-decoration: none;
+  color: #000000;
+  margin: 5px;
+}
+.content-2 a:hover {
+  color: #0000005d;
+}
   /*投稿new*/
   .post-form {
     padding: 1.5em 3em;

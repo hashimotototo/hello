@@ -81,12 +81,12 @@
 }
 
   /*いいね*/
-  .fas{
-    color:#d43e3e;
-  }
-
-  .fas:hover{
-    color:#d43e3eb4;
+  .fa-heart {
+    color: #d43e3e !important;
+}
+  
+  .fas-heart:hover{
+    color:#d43e3eb4 !important;
   }
   
   /*投稿リスト*/
@@ -140,13 +140,14 @@
 }
   /*投稿new*/
   .post-form {
-    padding: 1.5em 3em;
-    margin: 2em 0;
+    padding:20px 20px 75px 20px;
+    margin: 0 auto;
     font-weight: bold;
     color: #000000;/*文字色*/
     background: #FFF;
-    border: solid 1.5px #01050a3f;/*線*/
+    border: solid 1px #00000042;/*線*/
     border-radius: 10px;/*角の丸み*/
+    max-width: 400px;
 }
 
 .post-form p {
@@ -160,7 +161,7 @@
   .cp_ipselect {
 	overflow: hidden;
 	width: 90%;
-	margin: 2em auto;
+	
 	text-align: center;
 }
 .cp_ipselect select {
@@ -204,6 +205,8 @@
 	color: #666666;
 }
 
+
+
 /*写真選択*/
 input[type="file"] {
     display: none;
@@ -212,6 +215,48 @@ input[type="file"] {
 .filelabel {
     padding: 5px 20px;
     color: #ffffff;
-    background-color: green;
+    background-color: rgb(140, 175, 140);
     cursor: pointer;
+}
+
+/*入力フォーム*/
+form{
+  padding: 4em 10%;
+}
+.form-group{
+  margin-bottom: 20px;
+}
+h2.heading{
+  font-size: 18px;
+  text-transform: uppercase;
+  font-weight: 300;
+  text-align: left;
+  color: #5a5a5a62;
+  border-bottom: 1px solid #5a5a5a62;
+  padding-bottom: 3px;
+  margin-bottom: 10px;
+}
+.controls input[type="text"] {
+padding: 6px;
+    font-size: 12px;
+    border: 1px solid #5a5a5a62;
+    width: 100%;
+    margin-bottom: 18px;
+    color: #888;
+    font-family: 'Lato', 'sans-serif';
+    font-weight: 300;
+}
+
+
+.col-1-4 {
+  cursor: pointer;
+  background-color: #125c24;
+  border: none;
+  color: #fff;
+  padding: 10px 20px;
+  float: right;
+  border-radius: 19px;
+  &:hover{
+    background-color: lighten(#125c24, 5%);
+  }
 }

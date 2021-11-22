@@ -83,9 +83,9 @@
   }
 }
 .bx-pager {
-  position: absolute;
-  top: 420px;
-  size: 10px;
+  position: absolute !important;
+  top: 420px !important;
+  size: 10px !important;
 
 }
 

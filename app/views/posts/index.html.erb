@@ -33,7 +33,7 @@
   <div class="card-1">
     <%= link_to post_path(t.id) do %>
     <div class="content-img">
-    <%= image_tag t.image_url, size: "250x200" if t.image? %>
+    <%= image_tag t.image_url, size: "250x250" if t.image? %>
     </div>
     <% end %>
     <p class="content-1"><%= t.name %></p>

@@ -99,15 +99,19 @@
     transition: 0.3s;
   
   }
-  
+  .content-img:hover {
+      opacity: 0.6;
+      transition-duration: 0.3s;
+    
+  }
   
   .content-img {
     width: 250px;
     height: 250px;  
-    padding: 0.2em 0;
     text-align: center;
     background: #e3e7e6;
   }
+
   @media (max-width: 800px) {
     .content-img {
       width: 90px;

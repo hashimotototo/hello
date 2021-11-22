@@ -217,17 +217,16 @@
 
 
 /*写真選択*/
-input[type="file"] {
-    display: none;
-}
-
-.filelabel {
-    padding: 5px 20px;
-    color: #ffffff;
-    background-color: rgb(140, 175, 140);
-    cursor: pointer;
-}
-
+.controls input[type="file"] {
+  padding: 12px 0px 0px;
+      font-size: 12px;
+     
+      width: 100%;
+      margin-bottom: 18px;
+   
+      font-family: 'Lato', 'sans-serif';
+      font-weight: 300;
+  }
 /*入力フォーム*/
 form{
   padding: 4em 10%;
@@ -244,6 +243,15 @@ h2.heading{
   border-bottom: 1px solid #5a5a5a62;
   padding-bottom: 3px;
   margin-bottom: 10px;
+}
+h5.how-to {
+ font-size: 15px;
+ color: #5a5a5a62;
+ border-bottom: 1px solid #5a5a5a62;
+ padding-bottom: 1px;
+ margin-bottom: 8px;
+ text-align: left;
+ font-weight: 100;
 }
 .controls input[type="text"] {
 padding: 6px;

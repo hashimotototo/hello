@@ -45,39 +45,44 @@
      
         <h2 class="contents-name">RUNKNG</h2>
 <div class="header">
-     
-      <% @all_ranks.each.with_index(1) do |t,i| %>
+<div class="card-box">     
+  <% @all_ranks.each.with_index(1) do |t,i| %>
         
-       
-        <div class="card-1">
-        第<%= i %>位
-         <div class="content-img">
-            <%= image_tag t.image_url, size: "250x200" if t.image? %>
-         </div>
-         <p class="content-1"><%= t.name %></p>
-         <p class="content-2">
-          <%= link_to "詳細", post_path(t.id) %>
-     
-          <% if user_signed_in? %>
-          <% if current_user.already_liked?(t) %>
-          <%= link_to post_like_path(id: t.id, post_id: t.id), method: :delete do %>
-            <i class="fas fa-heart"></i><%= t.likes.count %>
-          <% end %>
-           <% else %>
-          <%= link_to post_likes_path(id: t.id, post_id: t.id), method: :post do %>
-            <i class="fas fa-heart"></i>
-           <%= t.likes.count %>
-          <% end %>
-           <% end %>
-    　     <% else %>
-     　   <i class="fas fa-heart"></i>
-          <%= t.likes.count %>
-    　　  <% end %>
-          </p>
-         <% end %>
       
+      <div class="card-2">
+        第<%= i %>位
+        <div class="card">
+          <%= link_to post_path(t.id) do %>
+          <div class="content-img">
+              <%= image_tag t.image_url, size: "250x200" if t.image? %>
+          </div>
+          <% end %>
+          <p class="content-1"><%= t.name %></p>
+          <p class="content-2">
+          
+      
+            <% if user_signed_in? %>
+            <% if current_user.already_liked?(t) %>
+            <%= link_to post_like_path(id: t.id, post_id: t.id), method: :delete do %>
+              <i class="fas fa-heart"></i><%= t.likes.count %>
+            <% end %>
+            <% else %>
+            <%= link_to post_likes_path(id: t.id, post_id: t.id), method: :post do %>
+              <i class="fas fa-heart"></i>
+            <%= t.likes.count %>
+            <% end %>
+            <% end %>
+            <% else %>
+            <i class="fas fa-heart"></i>
+            <%= t.likes.count %>
+            <% end %>
+            </p>
         </div>
       
+      </div>
+ 
+ <% end %>
+</div>     
          
         
   
@@ -194,6 +199,8 @@
   </li>
 
 </ul>
+
+
 
 
 </body>

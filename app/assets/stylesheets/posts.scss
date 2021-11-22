@@ -36,7 +36,7 @@
   .button1 i{
     position:absolute;
     top:20%;
-    left:400px;
+    left:520px;
     margin-top:-1.6em;
     color:#0070be;
   }
@@ -107,6 +107,15 @@
     padding: 0.2em 0;
     text-align: center;
     background: #e3e7e6;
+  }
+  @media (max-width: 800px) {
+    .content-img {
+      width: 90px;
+      height: 90px;  
+      padding: 0.1em 0;
+      text-align: center;
+      background: #e3e7e6;
+    }
   }
   
   .content-1,

@@ -17,6 +17,15 @@
   font-size: 20px;
   color: white;
 }
+@media (max-width: 800px) {
+  .top-word {
+    position: absolute;
+    top: 80px;
+    left: 20px;
+    font-size: 8px;
+    color: white;
+  }
+}
 
 .top-button {
   position: absolute;
@@ -27,11 +36,19 @@
   background-color: #355f19;
   display: inline-block;
   padding: 0.9em 1.4em;
-  font-size: 1.2em;
+  font-size: 0.4em;
 }
 .top-button:hover {
   color: #fff;
   background: #355f19;
+}
+@media (max-width: 800px) {
+  .top-button {
+    position: absolute;
+    top: 100px;
+    left: 20px;
+   
+  }
 }
 
 /*トップ写真*/
@@ -42,7 +59,12 @@
 .area_top_view {
   text-align: center;
 }
-
+@media (max-width: 800px) {
+  .area_top_view img {
+    width: 800px;
+    height: 150px;
+  }
+}
 .bx-wrapper {
   margin: 0 !important;
   -moz-box-shadow: none !important;
@@ -55,6 +77,11 @@
   width: 100% !important;
   height: auto !important;
 }
+@media (max-width: 800px) {
+  .bx-pager {
+    display: none;
+  }
+}
 .bx-pager {
   position: absolute;
   top: 420px;
@@ -66,10 +93,6 @@
   background: white !important;
   width: 8px !important;
   height: 8px !important;
-}
-
-.slider2 .bx-wrapper {
-
 }
 
 .bx-wrapper .bx-prev,
@@ -102,6 +125,22 @@
 .bx-wrapper .bx-controls-direction a {
     z-index: 9998;
 }
+
+.bxslider{   
+  margin:0px;
+}
+
+.bx-wrapper {
+  position: relative;
+}
+
+.bx-wrapper img {
+  width:100%;
+}
+
+.bx-viewport {
+  max-height: 450px;
+}
 /*ランキング*/
 .contents-name {
   text-align: center;
@@ -110,7 +149,43 @@
   margin-top: 110px;
   font-weight: 200;
 }
+@media (max-width: 800px) {
+  .contents-name {
+    text-align: center;
+    font-size: 14px;
+    margin-bottom: 10px;
+    margin-top: 20px;
+    font-weight: 10;
+  }
+}
+.card-2 {
+  width: 250px;
+  margin: 0 auto;
+  cursor: pointer;
+  
+  border-radius: 3px;
+  transition: 0.3s;
+}
+@media (max-width: 800px) {
+  .card-2 {
+    width: 90px;
+  }
+}
+.card {
+  width: 250px;
+  margin: 0 auto;
+  cursor: pointer;
+  border: 0.5px solid #e9eaea;
+  border-radius: 3px;
+  transition: 0.3s;
 
+
+}
+@media (max-width: 800px) {
+  .card {
+    width: 90px;
+  }
+}
 
 /*アバウト*/
 .text2 {
@@ -118,7 +193,13 @@
   line-height: 2;
   font-weight: 400;
   text-align: center;
-  margin: 10px 20px 20px 50px;
+  margin: 0 auto;
+}
+@media (max-width: 800px) {
+  .text2 {
+    padding-bottom: 15px;
+    font-size: 4px;
+  }
 }
 .marker19{
   background:linear-gradient(transparent 40%, #ffe0c1 40%);
@@ -131,6 +212,12 @@
   position: relative;
   color: #333;
   text-shadow: 0 0 2px white;
+}
+@media (max-width: 800px) {
+  .number {
+    left: 5%;
+    font-size: 15px;
+  }
 }
 .number:before {
   content: "";
@@ -146,7 +233,14 @@
   transform: translateY(-50%);
   z-index: -1;
 }
-
+@media (max-width: 800px) {
+  .number:before{
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  top: 40%;
+  }
+}
 /*素材紹介*/
 .bx-wrapper img {
   max-width: 100%;
@@ -207,4 +301,18 @@ ul.sample1 li:before{
 
 .explain {
   font-size: 12px;
+}
+/*投稿横並び*/
+.card-box {
+  display: flex;
+  gap: 10px 8px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.card-box::after{
+  content:"";
+  display: block;
+  width: 280px;
+  height: 0;
 }

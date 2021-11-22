@@ -27,41 +27,40 @@
 
 <div class="show">
 
-
+<div class="card-box">
   <% @posts.each do |t| %>
 
   <div class="card-1">
-  <%= link_to post_path(t.id) do %>
-  <div class="content-img">
-   <%= image_tag t.image_url, size: "250x200" if t.image? %>
+    <%= link_to post_path(t.id) do %>
+    <div class="content-img">
+    <%= image_tag t.image_url, size: "250x200" if t.image? %>
+    </div>
+    <% end %>
+    <p class="content-1"><%= t.name %></p>
+    <p class="content-2">
+    <%= t.about %>
+    <% if user_signed_in? %>
+    <% if current_user.already_liked?(t) %>
+        <%= link_to post_like_path(id: t.id, post_id: t.id), method: :delete do %>
+          <i class="fas fa-heart"></i><%= t.likes.count %>
+        <% end %>
+    <% else %>
+        <%= link_to post_likes_path(id: t.id, post_id: t.id), method: :post do %>
+          <i class="fas fa-heart"></i>
+        <%= t.likes.count %>
+        <% end %>
+    <% end %>
+    <% else %>
+   <i class="fas fa-heart"></i>
+    <%= t.likes.count %>
+    <% end %>
+    </p>
   </div>
   <% end %>
-  <p class="content-1"><%= t.name %></p>
-  <p class="content-2">
-  <%= t.about %>
-  <% if user_signed_in? %>
-  <% if current_user.already_liked?(t) %>
-      <%= link_to post_like_path(id: t.id, post_id: t.id), method: :delete do %>
-        <i class="fas fa-heart"></i><%= t.likes.count %>
-      <% end %>
-  <% else %>
-      <%= link_to post_likes_path(id: t.id, post_id: t.id), method: :post do %>
-        <i class="fas fa-heart"></i>
-       <%= t.likes.count %>
-      <% end %>
-  <% end %>
-<% else %>
- <i class="fas fa-heart"></i>
-  <%= t.likes.count %>
-  <% end %>
-
-  </p>
-
-  <% end %>
-
+</div>
   
 </div>
-</div>
+
 
 </div>
 

@@ -36,7 +36,7 @@
   background-color: #355f19;
   display: inline-block;
   padding: 0.9em 1.4em;
-  font-size: 0.4em;
+  font-size: 1em;
 }
 .top-button:hover {
   color: #fff;
@@ -47,7 +47,7 @@
     position: absolute;
     top: 100px;
     left: 20px;
-   
+   font-size: 00.2em;
   }
 }
 
@@ -114,9 +114,19 @@
     left: 100px;
     content: "＜";
 }
+@media (max-width: 800px) {
+  .bx-wrapper .bx-prev::after {
+    left: -11px
+  }
+}
 .bx-wrapper .bx-next::after {
     right: 100px;
     content: "＞";
+}
+@media (max-width: 800px) {
+  .bx-wrapper .bx-next::after {
+    right: -11px
+  }
 }
 .bx-wrapper .bx-prev:hover::after,
 .bx-wrapper .bx-next:hover::after {
@@ -197,8 +207,8 @@
 }
 @media (max-width: 800px) {
   .text2 {
-    padding-bottom: 15px;
-    font-size: 15px;
+    padding-bottom: 30px;
+    font-size: 13px;
   }
 }
 .marker19{
@@ -259,7 +269,7 @@
 }
 @media (max-width: 800px) {
   .kind img {
-    width: 10px;
+    width: 30px;
   }
 }
 .marker20 {
@@ -275,10 +285,10 @@ margin-right: 3%;
 }
 @media (max-width: 800px) {
   .kind {
-    margin-top: 5px;
-     width: 37.5%;
-   margin-right: 3%;
-     margin-left: 5%;
+    margin-top: 10px;
+    
+   margin-right: 10%;
+     margin-left: 10%;
    }
 }
 ul.sample1{
@@ -288,6 +298,13 @@ ul.sample1{
   padding:0;
   margin-top: 20px;
   margin-bottom: 20px;
+}
+@media (max-width: 800px) {
+  .ul.sample1 {
+    margin-bottom: 5px;
+    margin-top: 5px;
+    width: 800px;
+  }
 }
 ul.sample1 li{
   position:relative;

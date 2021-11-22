@@ -257,6 +257,11 @@
   margin-top: 70px;
   margin-left: 40px;
 }
+@media (max-width: 800px) {
+  .kind img {
+    width: 10px;
+  }
+}
 .marker20 {
   background:linear-gradient(transparent 40%, #ffe0c1 40%);
   text-align: end;
@@ -267,6 +272,14 @@
   width: 37.5%;
 margin-right: 3%;
   margin-left: 5%;
+}
+@media (max-width: 800px) {
+  .kind {
+    margin-top: 5px;
+     width: 37.5%;
+   margin-right: 3%;
+     margin-left: 5%;
+   }
 }
 ul.sample1{
   counter-reset:list;

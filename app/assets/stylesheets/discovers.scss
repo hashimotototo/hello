@@ -11,6 +11,11 @@
   position: relative;
   
 }
+@media (max-width: 800px) {
+  .discover-picture img {
+    width: 375px;
+  }
+}
 
 .custom-sindan {
   position: absolute;
@@ -25,6 +30,13 @@
   margin:0;
   padding:0;
 }
+@media (max-width: 800px) {
+    .custom-sindan {
+      top: 150px;
+      font-size: 20px;
+    }
+}
+
 .discover {
   margin:10px auto;
   text-align:center;
@@ -55,6 +67,11 @@
   font-weight: 400;
   text-align: center;
   margin: 80px 20px 20px 20px;
+}
+@media (max-width: 800px) {
+    .text {
+      margin-top: 30px;
+    }
 }
 
 /*質問*/

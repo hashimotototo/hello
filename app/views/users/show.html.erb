@@ -1,27 +1,64 @@
 
 <div class="header">
-<div class="user-form">
-<h2 class="heading">PLOFILE
-<%= link_to edit_user_registration_path do %>
-  <i class="far fa-edit"></i>
-<% end %>
+  <div class="user-form">
+    <h2 class="heading">PLOFILE
+    <%= link_to edit_user_registration_path do %>
+      <i class="far fa-edit"></i>
+    <% end %>
 
-<%= link_to destroy_user_session_path, method: :delete do %>
-  <i class="fas fa-sign-out-alt"></i>
-<% end %></h2>
-  <p class="user-name"><%= @user.name %></p>
-  <p class="profile"><%= @user.profile %></p>
-  <p class="post-count"><%= current_user.posts.where('created_at > ?', Date.new).count %><span>ポスト</span></p>
+    <%= link_to destroy_user_session_path, method: :delete do %>
+      <i class="fas fa-sign-out-alt"></i>
+    <% end %></h2>
+      <p class="user-name"><%= @user.name %></p>
+      <p class="profile"><%= @user.profile %></p>
+      <p class="post-count"><%= current_user.posts.where('created_at > ?', Date.new).count %><span>ポスト</span></p>
 
 
-</div>
-
-<div class="tab-wrap">
-    <input id="TAB-01" type="radio" name="TAB" class="tab-switch" checked="checked" /><label class="tab-label" for="TAB-01">いいね</label>
-    <div class="tab-content">
-      <div class=card-box>
-        <% @user.liked_posts.each do |t| %>
-        <div class="card-1">
+  </div>
+  </div>
+<div class="host">  
+  <div class="tab-wrap">
+      <input id="TAB-01" type="radio" name="TAB" class="tab-switch" checked="checked" /><label class="tab-label" for="TAB-01">いいね</label>
+      <div class="tab-content">
+        <div class=card-box>
+          <% @user.liked_posts.each do |t| %>
+          <div class="card-1">
+                <%= link_to post_path(t.id) do %>
+                <div class="content-img">
+                  <%= image_tag t.image_url, size: "250x250" if t.image? %>
+                </div>
+                <% end %>
+                <p class="content-1"><%= t.name %></p>
+                <p class="content-2">
+                <%= t.about %>
+              
+                <% if user_signed_in? %>
+                <% if current_user.already_liked?(t) %>
+                  <%= link_to post_like_path(id: t.id, post_id: t.id), method: :delete do %>
+                    <i class="fas fa-heart"></i><%= t.likes.count %>
+                  <% end %>
+                <% else %>
+                  <%= link_to post_likes_path(id: t.id, post_id: t.id), method: :post do %>
+                    <i class="fas fa-heart"></i>
+                  <%= t.likes.count %>
+                  <% end %>
+                  <% end %>
+                <% else %>
+                <i class="fas fa-heart"></i>
+                <%= t.likes.count %>
+                <% end %>
+                </p>
+                
+        </div>
+        <% end %>  
+      </div>
+        
+      </div>
+      <input id="TAB-02" type="radio" name="TAB" class="tab-switch" /><label class="tab-label" for="TAB-02">投稿</label>
+      <div class="tab-content">
+      <div class=card-box>  
+          <% @user.posts.each do |t| %>
+          <div class="card-1">
               <%= link_to post_path(t.id) do %>
               <div class="content-img">
                 <%= image_tag t.image_url, size: "250x250" if t.image? %>
@@ -30,7 +67,12 @@
               <p class="content-1"><%= t.name %></p>
               <p class="content-2">
               <%= t.about %>
-             
+              <%= link_to edit_post_path(t.id) do %>
+                <%= image_tag"edit-alt.png" %>
+              <% end %>
+              <%= link_to post_path(t.id), method: :delete do %>
+                <%= image_tag"delete.png" %>
+              <% end %>
               <% if user_signed_in? %>
               <% if current_user.already_liked?(t) %>
                 <%= link_to post_like_path(id: t.id, post_id: t.id), method: :delete do %>
@@ -47,51 +89,10 @@
               <%= t.likes.count %>
               <% end %>
               </p>
-              
-       </div>
-       <% end %>  
-     </div>
-       
+          </div>
+          <% end %>
+      </div>
+    </div>  
+  
     </div>
-    <input id="TAB-02" type="radio" name="TAB" class="tab-switch" /><label class="tab-label" for="TAB-02">投稿</label>
-    <div class="tab-content">
-     <div class=card-box>  
-        <% @user.posts.each do |t| %>
-        <div class="card-1">
-            <%= link_to post_path(t.id) do %>
-            <div class="content-img">
-              <%= image_tag t.image_url, size: "250x250" if t.image? %>
-            </div>
-            <% end %>
-            <p class="content-1"><%= t.name %></p>
-            <p class="content-2">
-            <%= t.about %>
-            <%= link_to edit_post_path(t.id) do %>
-              <%= image_tag"edit-alt.png" %>
-            <% end %>
-            <%= link_to post_path(t.id), method: :delete do %>
-              <%= image_tag"delete.png" %>
-            <% end %>
-            <% if user_signed_in? %>
-            <% if current_user.already_liked?(t) %>
-              <%= link_to post_like_path(id: t.id, post_id: t.id), method: :delete do %>
-                <i class="fas fa-heart"></i><%= t.likes.count %>
-              <% end %>
-            <% else %>
-              <%= link_to post_likes_path(id: t.id, post_id: t.id), method: :post do %>
-                <i class="fas fa-heart"></i>
-              <%= t.likes.count %>
-              <% end %>
-              <% end %>
-            <% else %>
-            <i class="fas fa-heart"></i>
-            <%= t.likes.count %>
-            <% end %>
-            </p>
-        </div>
-        <% end %>
-     </div>
-   </div>  
- 
-  </div>
 </div>

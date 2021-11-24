@@ -40,12 +40,14 @@
     margin-top:-1.6em;
     color:#0070be;
   }
+  @media (max-width: 800px) {
+    .button1 i {
+      left: 270px;
+    }
+  }
 
   .button1 i:hover{
-    position:absolute;
-    top:20%;
-    left:400px;
-    margin-top:-1.6em;
+  
     color:#006fbeb7;
   }
 
@@ -111,11 +113,12 @@
     text-align: center;
     background: #e3e7e6;
   }
+  
 
   @media (max-width: 800px) {
     .content-img {
-      width: 90px;
-      height: 90px;  
+      width: 120px;
+      height: 120px;  
       padding: 0.1em 0;
       text-align: center;
       background: #e3e7e6;
@@ -129,7 +132,13 @@
     margin: 0;
     font-size: 0.9em;
   }
-  
+  @media (max-width: 800px) {
+    .content-1,
+  .content-2 {
+    padding: 0.2em 0.1em;
+    font-size: 0.5em;
+  }
+  }
   .content-2 {
     font-size: 0.8em;
   }
@@ -161,6 +170,11 @@
     border: solid 1px #00000042;/*線*/
     border-radius: 10px;/*角の丸み*/
     max-width: 400px;
+}
+@media (max-width: 800px) {
+    .post-form {
+      width: 80%;
+    }
 }
 
 .post-form p {

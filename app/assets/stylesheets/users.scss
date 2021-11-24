@@ -5,7 +5,23 @@
     width: 70%;
     margin: 30px auto;
   }
+  @media (max-width: 800px) {
+    .header{
+    width: 100%;
+    margin: 10px auto;
+    }
+  }
 
+.host {
+  width: 70%;
+  margin: 30px auto;
+}
+@media (max-width: 800px) {
+  .host {
+    width: 100%;
+    margin: 0 auto;
+  }
+}
   /* Fonts */
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400);
 
@@ -183,6 +199,13 @@ form {
   border: 1px solid rgba(153, 153, 153, 0.527);
   border-radius: 10px;
 }
+@media (max-width: 800px) {
+    .user-form {
+      width: 80%;
+      padding: 10px 10px 8px 10px;
+    }
+}
+
 .command a {
   text-decoration: none;
   line-height: 1;
@@ -198,12 +221,24 @@ form {
   width: 15px;
   height: 15px;
 }
+@media (max-width: 800px) {
+  .content-2 img {
+    width: 10px;
+    height: 10px;
+  }
+}
 
 /*編集*/
 .fa-edit {
   color: #0000006b;
   margin-left: 190px;
 }
+@media (max-width: 800px) {
+ .fa-edit {
+   margin-left: 73px;
+ }    
+}
+
 .fa-edit:hover {
   color: #000000d8;
 }
@@ -283,6 +318,11 @@ form {
 	transform: translateX(-30%);
 	transition: transform .3s 80ms, opacity .3s 80ms;
 	width: 100%;
+}
+@media (max-width: 800px) {
+    .tab-content {
+      padding: 0;
+    }
 }
 
 .tab-switch:checked ~ .tab-content {

@@ -21,7 +21,7 @@
       <input id="TAB-01" type="radio" name="TAB" class="tab-switch" checked="checked" /><label class="tab-label" for="TAB-01">いいね</label>
       <div class="tab-content">
         <div class=card-box>
-          <% @user.liked_posts.each do |t| %>
+          <% @user.likes_posts.each do |t| %>
           <div class="card-1">
                 <%= link_to post_path(t.id) do %>
                 <div class="content-img">

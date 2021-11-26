@@ -15,7 +15,6 @@ Rails.application.routes.draw do
   get 'posts/tea' => 'posts#tea'
   get 'posts/other' => 'posts#other'
 
-
   resources :posts do
     resources :likes, only: [:create, :destroy]
   end

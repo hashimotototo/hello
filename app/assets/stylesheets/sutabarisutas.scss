@@ -114,6 +114,7 @@
   .bx-wrapper .bx-prev::after,
   .bx-wrapper .bx-next::after  {
     font-size: 20px;
+  
   }
 }
 
@@ -143,7 +144,11 @@
 .bx-wrapper .bx-controls-direction a {
     z-index: 9998;
 }
-
+@media (max-width: 800px) {
+  .bx-wrapper .bx-controls-direction a {
+    top: 40% !important;
+  }
+}
 .bxslider{   
   margin:0px;
 }
@@ -158,6 +163,11 @@
 
 .bx-viewport {
   max-height: 600px !important;
+}
+@media (max-width: 800px) {
+  .bx-viewport {
+    max-height: 500px !important;
+  }
 }
 /*ランキング*/
 .contents-name {
@@ -379,7 +389,7 @@ ul.sample1 li:before{
 }
 @media (max-width: 800px) {
 .explain {
-  font-size: 6px;
+  font-size: 10px;
 }    
 }
 
@@ -412,3 +422,9 @@ h6 {
   font-size: 14px;
 }
 
+
+@media (max-width: 800px) {
+  .te {
+    max-width: 60px;
+  }
+}

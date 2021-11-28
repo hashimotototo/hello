@@ -138,9 +138,17 @@
     .content-1 {
     padding: 0.2em 0.1em;
     font-size: 0.5em;
+    width: 120px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
   }
   }
-  
+  @media (max-width: 800px) {
+    .content-2 {
+      padding: 0.2em 0.1em;
+    }
+  }
   .content-2::after {
     position: absolute;
     top: 0;
@@ -177,8 +185,12 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-
- 
+}
+@media (max-width: 800px) {
+  .textOverFlow {
+    width: 70px;
+    font-size: 10px;
+}
 }
 /*いいね、アバウト横並び*/
 .content-2 {

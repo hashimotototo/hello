@@ -202,7 +202,7 @@ footer {
 @media (max-width: 800px) {
   .foot {
     height: 25px;
-    margin-left: 60%;
+    margin-left: 7%;
   }
 }
 footer p {
@@ -214,6 +214,7 @@ footer p {
 @media (max-width: 800px) {
   footer p {
     font-size: 10px;
+
   }
 }
 

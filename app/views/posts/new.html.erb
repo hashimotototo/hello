@@ -7,7 +7,7 @@
     <%= form_for @post do |f| %>
     
       <div class="controls">
-      <input type="text" class="FloatLabel" name="post[name]" id="post_name" placeholder="商品名 （ex.抹茶フラペチーノ）">
+      <input type="text" class="FloatLabel" name="post[name]" id="post_name" placeholder="※商品名 （ex.抹茶フラペチーノ）">
       </div>
       
     <div class="cp_ipselect cp_sl01">
@@ -29,7 +29,7 @@
     </div>
     <h5 class="how-to">カスタム方法</h4>
     <div class="controls">
-      <%= f.text_field :custom1, :size => 30, placeholder: "カスタム１  (ex.チョコレートソース追加)" %>
+      <%= f.text_field :custom1, :size => 30, placeholder: "※カスタム１  (ex.チョコレートソース追加)" %>
     </div>
     <div class="controls">
    
@@ -50,7 +50,7 @@
     <h5 class="how-to">感想（味や値段、カロリーなど）</h4>
     <div class="controls">
   
-      <%= f.text_field :about, :size => 30, placeholder: "コメント" %>
+      <%= f.text_field :about, :size => 30, placeholder: "コメント(200文字以内)" %>
     </div>
 
     

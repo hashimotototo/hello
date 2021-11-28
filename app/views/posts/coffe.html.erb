@@ -25,38 +25,41 @@
 
 <div class="show">
 
-
+<div class="card-box">
   <% @coffes.each do |t| %>
-  
+
   <div class="card-1">
-  <div class="content-img">
-   <%= image_tag t.image_url, size: "250x200" if t.image? %>
+    <%= link_to post_path(t.id) do %>
+    <div class="content-img">
+    <%= image_tag t.image_url, size: "250x250" if t.image? %>
+    </div>
+    <% end %>
+    <p class="content-1"><%= t.name %></p>
+    <div class="content-2">
+        <div class="te"><div class="textOverFlow"><%= t.about %></div></div>
+        <div class="te">
+        <% if user_signed_in? %>
+        <% if current_user.already_liked?(t) %>
+            <%= link_to post_like_path(id: t.id, post_id: t.id), method: :delete, remote: true  do %>
+              <i class="fas fa-heart fa-lg"></i><%= t.likes.count %>
+            <% end %>
+        <% else %>
+            <%= link_to post_likes_path(id: t.id, post_id: t.id), method: :post, remote: true  do %>
+              <i class="far fa-heart fe-lg"></i>
+            <%= t.likes.count %>
+            <% end %>
+        <% end %>
+        <% else %>
+       <i class="fas fa-heart fa-lg"></i>
+        <%= t.likes.count %>
+        <% end %>
+        </div>
+    </div>
   </div>
-  <p class="content-1"><%= t.name %></p>
-  <p class="content-2">
-  <%= link_to "詳細", post_path(t.id) %>
-
-  <% if user_signed_in? %>
-  <% if current_user.already_liked?(t) %>
-      <%= link_to post_like_path(id: t.id, post_id: t.id), method: :delete do %>
-        <i class="fas fa-heart"></i><%= t.likes.count %>
-      <% end %>
-  <% else %>
-      <%= link_to post_likes_path(id: t.id, post_id: t.id), method: :post do %>
-        <i class="fas fa-heart"></i>
-       <%= t.likes.count %>
-      <% end %>
   <% end %>
-　　<% else %>
- 　<i class="fas fa-heart"></i>
-  <%= t.likes.count %>
-　　<% end %>
-
-  </p>
-
-  <% end %>
-
+</div>
   
 </div>
-</div>
+
+
 </div>

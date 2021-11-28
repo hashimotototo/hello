@@ -1,39 +1,49 @@
 <div class="contents">
 <div class="header">
-
-  <p><%= @post.name %></p>
-  <p>カテゴリー：<%= @post.category %></p>
-  <p>+<%= @post.custom1 %></p>
-  <p>+<%= @post.custom2 %></p>
-  <p>+<%= @post.custom3 %></p>
-  <p>+<%= @post.custom4 %></p>
-  <p>+<%= @post.custom5 %></p>
-  <p><%= @post.about %></p>
-  <p><%= @post.created_at %></p>
-  <%= link_to "編集", edit_post_path(@post.id) %>
-
-
-  <% if user_signed_in? %>
-      <% if current_user.already_liked?(@post) %>
-          <%= link_to post_like_path(@post), method: :delete do %>
-            <i class="fas fa-heart"></i><%= @post.likes.count %>
+<div class="tweet-container">
+  <div class="tweet">
+  <div class="hash"><p>#<%= @post.category %></p></div>
+  <div class="sutaba">
+  <%= image_tag @post.image.url %>
+  </div>
+  <h4><%= @post.name %>　を注文</h4>
+  <div class="container-box">
+      <div class="custom">
+      <span>custom</span>
+        <ul><h5><%= @post.custom1 %></h5></ul>
+        <ul><h5><%= @post.custom2 %></h5></ul>
+        <ul><h5><%= @post.custom3 %></h5></ul>
+        <ul><h5><%= @post.custom4 %></h5></ul>
+        <ul><h5><%= @post.custom5 %></h5></ul>
+      </div>
+      <div class="custom">
+            <span>comment</span>
+              <p><%= @post.about %></p>
+      </div>
+      <div class="comm">
+      <span><%= @post.created_at.strftime('%Y/%m/%d')  %></span>
+    
+      <% if user_signed_in? %>
+          <% if current_user.already_liked?(@post) %>
+              <%= link_to post_like_path(@post), method: :delete do %>
+                <i class="fas fa-heart fa-lg"></i><%= @post.likes.count %>
+              <% end %>
+          <% else %>
+              <%= link_to post_likes_path(@post), method: :post do %>
+                <i class="far fa-heart fa-lg"></i><%= @post.likes.count %>
+              <% end %>
           <% end %>
       <% else %>
-          <%= link_to post_likes_path(@post), method: :post do %>
-            <i class="fas fa-heart"></i><%= @post.likes.count %>
-          <% end %>
+        <i class="far fa-heart fa-lg"></i><%= @post.likes.count %>
       <% end %>
-  <% else %>
-    <i class="far fa-heart"></i><%= @post.likes.count %>
-  <% end %>
+      </div>
+       <p class="liked">いいね!:
+      <% @post.liked_users.each do |user| %>
+      <%= user.name %>
+      <% end %>
+      </p>
+  </div>
+
 </div>
-
-
-<h2>いいねしたユーザー</h2>
-<% @post.liked_users.each do |user| %>
-  <li><%= user.name %></li>
-<% end %>
-
-<%= link_to "一覧に戻る", posts_path %>
 
 <div>

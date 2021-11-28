@@ -10,7 +10,7 @@
         $(document).ready(function(){
             $('.slider').bxSlider({
                 auto: true,
-                pause: 6000,
+                pause: 4000,
                 controls: false,
                 pager: true
             });
@@ -51,7 +51,7 @@
         
       
       <div class="card-2">
-          <h6 class="runking"><%= i %>位</h5>
+          <h6 class="runking"><%= i %>位</h6>
         <div class="card">
           <%= link_to post_path(t.id) do %>
           <div class="content-img">
@@ -59,25 +59,26 @@
           </div>
           <% end %>
           <p class="content-1"><%= t.name %></p>
-          <p class="content-2">
-          
-      
+          <div class="content-2">
+            <div class="te"><div class="textOverFlow"><%= t.about %></div></div>
+            <div class="te">
             <% if user_signed_in? %>
             <% if current_user.already_liked?(t) %>
             <%= link_to post_like_path(id: t.id, post_id: t.id), method: :delete do %>
-              <i class="fas fa-heart"></i><%= t.likes.count %>
+              <i class="fas fa-heart fa-lg"></i><%= t.likes.count %>
             <% end %>
             <% else %>
             <%= link_to post_likes_path(id: t.id, post_id: t.id), method: :post do %>
-              <i class="fas fa-heart"></i>
+              <i class="far fa-heart fa-lg"></i>
             <%= t.likes.count %>
             <% end %>
             <% end %>
             <% else %>
-            <i class="fas fa-heart"></i>
+            <i class="fas fa-heart fa-lg"></i>
             <%= t.likes.count %>
             <% end %>
-            </p>
+            </div>
+            </div>
         </div>
       
       </div>
@@ -101,7 +102,7 @@
 <span class="marker19">素材</span>と<span class="marker19">どうするか（追加・変更・削除・増量・減量）</span>で<br>
 決めることができます。<br>
 <br>
-ここでは、よくカスタマイズされる「素材」を紹介します。<br>
+ここでは、よくカスタマイズされる「<span class="emphasis01">素材</span>」を紹介します。<br>
 （ここで紹介されているもの以外にも種類があります）<br>
 </p>
 </div>
@@ -120,7 +121,7 @@
           <li>アーモンドミルク</li><span class="explain">香ばしさと濃厚な味わい</span>
           <li>ブラベ</li><span class="explain">ミルクとホイップクリーム原液半分ずつ</span>
         </ul>
-        <span class="marker20">※追加+50円</span>
+        <p class="marker20">追加+50円</p>
       </div>
       <div class="kind">
       <%= image_tag"milk.jpeg" %>
@@ -141,7 +142,7 @@
           <li>クラシックシロップ</li><span class="explain">シンプルな甘さを追加したいときに</span>
           <li>チャイシロップ</li><span class="explain">スパイシーで甘い風味</span>
         </ul>
-        <span class="marker20">※追加+50円</span>
+        <p class="marker20">※追加+50円</p>
       </div>
       <div class="kind">
       <%= image_tag"siroppu.png" %>
@@ -156,7 +157,7 @@
           <li>チョコレートソース</li><span class="explain">ホイップ・抹茶との相性抜群</span>
           <li>キャラメルソース</li><span class="explain">ミルクとホイップの相性抜群</span>
         </ul>
-        <span class="marker20">※追加無料！</span>
+        <p class="marker20">※追加無料！</p>
       </div>
       <div class="kind">
       <%= image_tag"so-su.png" %>
@@ -173,7 +174,7 @@
           <li>シナモンパウダー</li><span class="explain">甘い香りとマイルドな風味</span>
           <li>ガムシロップ</li><span class="explain">シンプルな甘さを追加</span>
         </ul>
-        <span class="marker20">※追加無料！</span>
+        <p class="marker20">※追加無料！</p>
       </div>
       <div class="kind">
       <%= image_tag"kondiment.png" %>

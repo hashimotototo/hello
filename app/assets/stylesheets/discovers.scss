@@ -63,6 +63,8 @@
   opacity: 0;
   visibility: hidden;
 }
+
+ 
 /*診断する*/
 
 .discover-picture img {
@@ -395,10 +397,12 @@ ul {
   background: #FFF;
   border: solid 3px #355f19;/*線*/
   border-radius: 10px;/*角の丸み*/
+
 }
 .custom {
   text-align:center;
  margin:0 auto;
+ margin-bottom: 10px;
 }
 .custom ul {
   margin: 0; 
@@ -553,6 +557,6 @@ ul {
   }
 
 
-  
+
 
   

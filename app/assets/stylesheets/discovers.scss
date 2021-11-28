@@ -244,7 +244,11 @@ input[type=checkbox]:checked + .checkbox02::after {
     
     
 }
-
+@media (max-width: 800px) {
+  .sindanbotan input[type="submit"] {
+    width: 40%;
+}
+}
 /*--hover--*/
 .sindanbotan input[type="submit"]:hover {
     color: rgb(34, 83, 24);
@@ -266,6 +270,11 @@ input[type=checkbox]:checked + .checkbox02::after {
 .box2 {
    width: 50%;
    margin: 30px auto;
+ }
+ @media (max-width: 800px) {
+   .box2 {
+     width: 98%;
+   }
  }
 
  /*あなたにおすすめのカスタムは*/
@@ -430,6 +439,11 @@ ul {
   margin-bottom: 10px;
   z-index: 2; 
 }
+@media (max-width: 800px) {
+  .balloon3-left {
+    left: 240px;
+  }
+}
 .balloon4-left {
   position: relative;
   left: 340px;
@@ -490,7 +504,13 @@ ul {
   border-radius: 50%;
   margin-top: 60px;
 }
-
+@media (max-width: 800px) {
+  .balloon5 .faceicon img {
+    height: 110px;
+    width: 110px;
+    margin-top: 135px;
+  }
+}
  
 
 .balloon5 .chatting {
@@ -508,7 +528,12 @@ ul {
   padding: 0.5em 1em;
   max-width: 400px;
 }
-
+@media (max-width: 800px) {
+  .says {
+    margin: 100px 0 0 67px;
+  max-width: 230px;
+  }
+}
 .says:after {
   content: "";
   display: inline-block;
@@ -537,7 +562,8 @@ ul {
 
 }
 .again {
-  padding-top: 10px;
+  padding-top: 60px;
+  padding-bottom: 30px;
   text-align: center;
   margin: 0 auto; 
  

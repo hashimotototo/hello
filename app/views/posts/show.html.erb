@@ -1,5 +1,13 @@
 <div class="contents">
 <div class="header">
+<div class="back">
+<section id="back">
+<a href="#" class="back-to" onclick="history.back(-1);return false;"></a>
+<button type="button" onclick="history.back()">
+  <%= image_tag"back-button.png" %>
+</button>
+</section> 
+</div>
 <div class="tweet-container">
   <div class="tweet">
   <div class="hash"><p>#<%= @post.category %></p></div>
